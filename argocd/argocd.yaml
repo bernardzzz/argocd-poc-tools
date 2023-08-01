@@ -7,7 +7,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: app-of-apps
+    path: argocd/app-of-apps
     repoURL: https://github.com/bernardzzz/argocd-poc-tools.git
     targetRevision: main
   syncPolicy:
