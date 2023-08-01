@@ -1,10 +1,16 @@
-apiVersion: v2
-name: traefik
-description: A Helm chart for Kubernetes
-type: application
-version: 0.1.0
-appVersion: "1.0"
-dependencies:
-  - name: traefik
-    version: 1.7.9
-    repository: https://helm.traefik.io/traefik
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: traefik
+  namespace: argocd
+spec:
+  destination:
+    namespace: traefik
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    chart: traefik
+    repoURL: https://helm.traefik.io/traefik
+    targetRevision: 9.14.2
+    helm:
+      releaseName: traefik

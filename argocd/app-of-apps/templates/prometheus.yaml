@@ -1,10 +1,16 @@
-apiVersion: v2
-name: prometheus
-description: A Helm chart for Kubernetes
-type: application
-version: 0.1.0
-appVersion: "1.0"
-dependencies:
-  - name: prometheus
-    version: 2.3.1
-    repository: https://prometheus-community.github.io/helm-charts
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus
+  namespace: argocd
+spec:
+  destination:
+    namespace: traefik
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    chart: prometheus
+    repoURL: https://prometheus-community.github.io/helm-charts
+    targetRevision: 11.16.3
+    helm:
+      releaseName: prometheus
