@@ -1,0 +1,4 @@
+prometheus:
+  replicas: 1
+  storageSize: 10Gi
+  # Add other Prometheus-specific configuration here

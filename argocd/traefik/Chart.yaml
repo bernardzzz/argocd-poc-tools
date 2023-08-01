@@ -1,0 +1,11 @@
+apiVersion: v2
+name: traefik
+version: 0.1.0
+description: A Helm chart for deploying Traefik
+
+dependencies:
+  - name: traefik
+    version: 23.2.0
+    repository: https://helm.traefik.io/traefik
+
+namespace: traefik

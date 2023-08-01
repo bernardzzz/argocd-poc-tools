@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-of-apps
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: app-of-apps
+    repoURL: https://github.com/bernardzzz/argocd-poc-tools.git
+    targetRevision: main
+  syncPolicy:
+    automated: {}

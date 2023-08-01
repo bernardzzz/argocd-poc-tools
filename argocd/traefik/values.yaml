@@ -1,0 +1,3 @@
+traefik:
+  replicas: 2
+  # Add other Traefik-specific configuration here
