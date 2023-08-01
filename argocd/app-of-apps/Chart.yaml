@@ -1,4 +1,4 @@
 apiVersion: v2
-name: app-of-apps
+name: tool-apps
 version: 0.1.0
 description: A Helm chart for the "app of apps" pattern
